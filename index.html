@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مرجع طالب الميكاترونكس الهندسية | Mechatronics Hub</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Cairo', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased">
+
+  <!-- Header Section -->
+  <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-blue-500/30">
+          ⚙️
+        </div>
+        <div>
+          <h1 class="text-xl font-extrabold tracking-tight text-white">دليل هندسة الميكاترونكس</h1>
+          <p class="text-xs text-slate-400">المنصة الشاملة لتأسيس وتطوير مهندس المستقبل</p>
+        </div>
+      </div>
+      
+      <!-- Nav Links -->
+      <nav class="flex flex-wrap justify-center items-center gap-2 text-xs font-semibold">
+        <a href="#foundations" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-300 transition">1. التأسيس</a>
+        <a href="#tools" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-purple-600 hover:text-white text-slate-300 transition">2. الأدوات</a>
+        <a href="#language" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-indigo-600 hover:text-white text-slate-300 transition">3. التكامل واللغة</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-teal-600 hover:text-white text-slate-300 transition">4. المشاريع</a>
+        <a href="#files" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-amber-600 hover:text-white text-slate-300 transition">5. المحاضرات والملفات</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Intro & Search Bar -->
+  <section class="py-10 bg-gradient-to-b from-slate-900 via-slate-800/50 to-slate-900 border-b border-slate-800/80">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <span class="text-xs font-semibold px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20 inline-block mb-3">
+        مرجع شامل ومكتمل 🚀
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-3 leading-tight">
+        دليلك الميداني لتعلم هندسة الميكاترونكس
+      </h2>
+      <p class="text-slate-400 text-xs sm:text-base leading-relaxed mb-6">
+        من العلوم الأساسية والرياضيات حتى البرمجة، الأنظمة المدمجة، الإنجليزية التقنية، والمشاريع التطبيقية.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="max-w-xl mx-auto relative">
+        <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-400 text-lg">
+          🔍
+        </div>
+        <input 
+          type="text" 
+          id="searchInput" 
+          oninput="filterCards()" 
+          placeholder="ابحث عن محاضرة، كورس، موضوع، أو ملف PDF..." 
+          class="w-full pr-11 pl-4 py-3 bg-slate-800/90 border border-slate-700 rounded-2xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm shadow-inner"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+    <!-- No Results Message -->
+    <div id="noResultsMessage" class="hidden text-center py-12">
+      <p class="text-slate-400 text-lg">🔍 لم يتم العثور على نتائج تطابق بحثك.</p>
+    </div>
+
+    <!-- HUB 1: FOUNDATIONS -->
+    <section id="foundations" class="space-y-6 hub-section">
+      <div class="border-r-4 border-blue-500 pr-4">
+        <h2 class="text-2xl font-bold text-white">1. بوابة التأسيس الهندسي (Foundations Hub)</h2>
+        <p class="text-xs text-slate-400 mt-1">الرياضيات الهندسية، الميكانيكا (استاتيكا وديناميكا)، والكهرباء والإلكترونيات.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Advanced Math -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20 mb-3 inline-block">Math / الرياضيات</span>
+            <h3 class="text-lg font-bold text-white mb-2">الرياضيات الهندسية والمتقدمة</h3>
+            <p class="text-slate-300 text-sm mb-2">الجبر الخطي، التفاضل والتكامل المتقدم، تحويلات لابلاس وفورييه.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLin-qE531ul6m-fz7N8MoV8Z8eEfXk8Mv&si=8yzl-vAk-aI6KSJY" target="_blank" class="text-sm text-emerald-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- Statics -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20 mb-3 inline-block">Mechanics / Statics</span>
+            <h3 class="text-lg font-bold text-white mb-2">ميكانيكا الاستاتيكا (Statics)</h3>
+            <p class="text-slate-300 text-sm mb-2">تحليل القوى والعزوم ومعادلات الاتزان والجمالونات الهندسية.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLiih62ickocYJLx5BAL6A61EBh9qyj8-m&si=hvle7cmWsUEwwxt7" target="_blank" class="text-sm text-blue-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- Dynamics 1 -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20 mb-3 inline-block">Mechanics / Dynamics</span>
+            <h3 class="text-lg font-bold text-white mb-2">الديناميكا الهندسية الشاملة (+50 فيديو)</h3>
+            <p class="text-slate-300 text-sm mb-2">دراسة حركات الأجسام، قوانين نيوتن، والشغل والطاقة والزخم.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLdFnSHcyF1S5fKtc-iYoYtX0n5rP3Mjqp&si=8h32raDeSCniYnAF" target="_blank" class="text-sm text-blue-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- Dynamics 2 -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20 mb-3 inline-block">Dynamics Essentials</span>
+            <h3 class="text-lg font-bold text-white mb-2">أساسيات ومفاهيم الديناميكا (11 فيديو)</h3>
+            <p class="text-slate-300 text-sm mb-2">ملخص مكثف وسريع لأهم مفاهيم الديناميكا وحل المسائل.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLiih62ickocZjjJgKyCAfWpCf4pxQnZvR&si=B05W4zd81lpVPbng" target="_blank" class="text-sm text-blue-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- Electronics 100 -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-full border border-amber-500/20 mb-3 inline-block">Electronics</span>
+            <h3 class="text-lg font-bold text-white mb-2">كورس الإلكترونيات (100 محاضرة)</h3>
+            <p class="text-slate-300 text-sm mb-2">أشباه الموصلات، الدايودات، الترانزستورات، ومكبرات العمليات.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLww54WQ2wa5rOJ7FcXxi-CMNgmpybv7ei&si=9WToQBrwTMwLUOxn" target="_blank" class="text-sm text-amber-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- Electric Circuits -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-orange-500/10 text-orange-400 rounded-full border border-orange-500/20 mb-3 inline-block">Electrical Circuits</span>
+            <h3 class="text-lg font-bold text-white mb-2">تحليل الدوائر الكهربائية</h3>
+            <p class="text-slate-300 text-sm mb-2">قوانين أوم وكيرشوف والتحليل الشبكي والعقدي ونظريات الدوائر.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLUSE6w0Kh7fKLEM_b7rEaUUXOS0RzDsyn&si=5Liu3CsNH0JfjABe" target="_blank" class="text-sm text-orange-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- DC Machines -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-rose-500/10 text-rose-400 rounded-full border border-rose-500/20 mb-3 inline-block">DC Machines</span>
+            <h3 class="text-lg font-bold text-white mb-2">آلات التيار المستمر</h3>
+            <p class="text-slate-300 text-sm mb-2">محركات ومولدات التيار المستمر وعلاقات السرعة بالعزم والتحكم.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLim_nwaF0KxRYokQmQUI2sKC-HvjUwJS1&si=68DalnnfdHb6jO5W" target="_blank" class="text-sm text-rose-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- Electrical Fundamentals -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-full border border-amber-500/20 mb-3 inline-block">Electrical Basics</span>
+            <h3 class="text-lg font-bold text-white mb-2">مبادئ الكهربائيات (19 فيديو)</h3>
+            <p class="text-slate-300 text-sm mb-2">شرح مركز لأساسيات الهندسة الكهربائية، الجهد، التيار والقدرة.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLin-qE531ul68lpCTi1hGypDgd2zGDm1z&si=pIHzGAEIF9DKgZrI" target="_blank" class="text-sm text-amber-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HUB 2: SOFTWARE & TOOLS -->
+    <section id="tools" class="space-y-6 hub-section">
+      <div class="border-r-4 border-purple-500 pr-4">
+        <h2 class="text-2xl font-bold text-white">2. بوابة العقل والأدوات (Software & Tools Hub)</h2>
+        <p class="text-xs text-slate-400 mt-1">برامج التصميم والرسم، البرمجة، والأنظمة المدمجة.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- AutoCAD 1 -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20 mb-3 inline-block">CAD / AutoCAD</span>
+            <h3 class="text-lg font-bold text-white mb-2">أساسيات الرسم الهندسي والأوتوكاد</h3>
+            <p class="text-slate-300 text-sm mb-2">مبادئ الرسم، رسم المساقط والقطاعات الهندسية وتطبيقها برمجياً.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLk-kKRMIzMXyO-_rNTA1L5gRvaPF1lS4_&si=6_DIypNnRctm46k-" target="_blank" class="text-sm text-emerald-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- AutoCAD 2 -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20 mb-3 inline-block">CAD Practice</span>
+            <h3 class="text-lg font-bold text-white mb-2">تطبيقات وحلول أوتوكاد الهندسية</h3>
+            <p class="text-slate-300 text-sm mb-2">دروس عملية واحترافية لبناء ورسم المخططات الهندسية بدقة.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PL5FXWpfgMQ-zfRlDRFZGmCHbL4OslSiAD&si=kFf6dw1dZOCVZZ0_" target="_blank" class="text-sm text-emerald-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- C++ -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-purple-500/10 text-purple-400 rounded-full border border-purple-500/20 mb-3 inline-block">Programming / C++</span>
+            <h3 class="text-lg font-bold text-white mb-2">كورس C++ (55 فيديو)</h3>
+            <p class="text-slate-300 text-sm mb-2">تأسيس C++ والبرمجة الكائنية (OOP) لبرمجة المتحكمات.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLnzqK5HvcpwQ_nQt-hKGAEIDJjTJBCV02&si=sAMdDeVW5mYGXsWE" target="_blank" class="text-sm text-purple-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- Python -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-purple-500/10 text-purple-400 rounded-full border border-purple-500/20 mb-3 inline-block">Programming / Python</span>
+            <h3 class="text-lg font-bold text-white mb-2">كورس Python (52 فيديو)</h3>
+            <p class="text-slate-300 text-sm mb-2">تأسيس بايثون للرؤية الحاسوبية، الذكاء الاصطناعي، وتحليل البيانات.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLknwEmKsW8OsG8dnisr_-2WGyx7lpgGEE&si=H_2Eb7eAo58atHaJ" target="_blank" class="text-sm text-purple-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- Arduino -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-cyan-500/10 text-cyan-400 rounded-full border border-cyan-500/20 mb-3 inline-block">Embedded / Arduino</span>
+            <h3 class="text-lg font-bold text-white mb-2">كورس الآردوينو (55 فيديو)</h3>
+            <p class="text-slate-300 text-sm mb-2">برمجة المتحكمات وقراءة الحساسات والتحكم بالمحركات عملياً.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLa4kqtM7SuFwpY8omRT32RK8kw1hDIGJ3&si=Rk4ZowcU9dwjVoFF" target="_blank" class="text-sm text-cyan-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HUB 3: LANGUAGE & INTEGRATION -->
+    <section id="language" class="space-y-6 hub-section">
+      <div class="border-r-4 border-indigo-500 pr-4">
+        <h2 class="text-2xl font-bold text-white">3. بوابة التكامل واللغة (System Integration Hub)</h2>
+        <p class="text-xs text-slate-400 mt-1">اللغة الإنجليزية التقنية وقنوات تعزيز الحس الهندسي والتفكير العلمي.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Technical English -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-500/10 text-indigo-400 rounded-full border border-indigo-500/20 mb-3 inline-block">Technical English</span>
+            <h3 class="text-lg font-bold text-white mb-2">كورس الإنجليزية التقنية (108 فيديو)</h3>
+            <p class="text-slate-300 text-sm mb-2">دورة موسعة لتطوير المصطلحات الهندسية، وقراءة الـ Datasheets، والمراجع العلمية.</p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLW-bPXP2Mbg82uBkU5XPCiZW6r7O7nkr7&si=2Tv1QF62QqWMRpTy" target="_blank" class="text-sm text-indigo-400 font-medium hover:underline mt-4">افتح المصدر ↗</a>
+        </div>
+
+        <!-- Veritasium -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-500/10 text-indigo-400 rounded-full border border-indigo-500/20 mb-3 inline-block">Scientific Intuition</span>
+            <h3 class="text-lg font-bold text-white mb-2">قناة Veritasium (الفكر الهندسي)</h3>
+            <p class="text-slate-300 text-sm mb-2">تقارير تفصيلية عن أعظم الاختراعات والتحديات الفيزيائية والهندسية بأسلوب وثائقي عالمي.</p>
+          </div>
+          <a href="https://youtube.com/@veritasium" target="_blank" class="text-sm text-indigo-400 font-medium hover:underline mt-4">افتح القناة ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HUB 4: PROJECTS & APPLICATION -->
+    <section id="projects" class="space-y-6 hub-section">
+      <div class="border-r-4 border-teal-500 pr-4">
+        <h2 class="text-2xl font-bold text-white">4. بوابة التطبيق والمشاريع (Projects Hub)</h2>
+        <p class="text-xs text-slate-400 mt-1">مشاريع روبوتية، ابتكارات، وإعادة تدوير تقني للمساقات الدراسية.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- Dr. Maker -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-teal-500/10 text-teal-400 rounded-full border border-teal-500/20 mb-3 inline-block">Maker / ESP32</span>
+            <h3 class="text-lg font-bold text-white mb-2">دكتور ميكر (Dr. Maker)</h3>
+            <p class="text-slate-300 text-sm mb-2">ابتكارات وإعادة تدوير تقني ومشاريع إلكترونية بـ ESP32 و Arduino وإنترنت الأشياء.</p>
+          </div>
+          <a href="https://youtube.com/@drmakerr" target="_blank" class="text-sm text-teal-400 font-medium hover:underline mt-4">افتح القناة ↗</a>
+        </div>
+
+        <!-- SunFounder -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-sky-500/10 text-sky-400 rounded-full border border-sky-500/20 mb-3 inline-block">Robotics Kits</span>
+            <h3 class="text-lg font-bold text-white mb-2">SunFounder Official</h3>
+            <p class="text-slate-300 text-sm mb-2">شروحات ومشاريع روبوتية عمليا باستخدام Arduino و Raspberry Pi.</p>
+          </div>
+          <a href="https://youtube.com/@sunfounder_official" target="_blank" class="text-sm text-sky-400 font-medium hover:underline mt-4">افتح القناة ↗</a>
+        </div>
+
+        <!-- RobotyLab -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-violet-500/10 text-violet-400 rounded-full border border-violet-500/20 mb-3 inline-block">Robotics Projects</span>
+            <h3 class="text-lg font-bold text-white mb-2">RobotyLab</h3>
+            <p class="text-slate-300 text-sm mb-2">أفكار وتطبيقات عملي لبناء أنظمة روبوتية متميزة للمشاريع الدراسية.</p>
+          </div>
+                <a href="https://youtube.com/@robotylab" target="_blank" class="text-sm text-violet-400 font-medium hover:underline mt-4">افتح القناة ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HUB 5: LECTURES & FILES -->
+    <section id="files" class="space-y-6 hub-section">
+      <div class="border-r-4 border-amber-500 pr-4">
+        <h2 class="text-2xl font-bold text-white">5. مكتبة المحاضرات والملفات (Lectures & Files)</h2>
+        <p class="text-xs text-slate-400 mt-1">تنزيل مباشر لملفات الـ PDF، المحاضرات، وملخصات دوائر التيار المتردد والقدرة الكهربائية.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- AC Circuits Lecture -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-full border border-amber-500/20 mb-3 inline-block">PDF / AC Circuits</span>
+            <h3 class="text-lg font-bold text-white mb-2">محاضرات دوائر التيار المتردد (AC Circuits)</h3>
+            <p class="text-slate-300 text-sm mb-2">د. زكي مجيد — الأعداد المركبة، تحليل RLC، والرنين (Resonance).</p>
+          </div>
+          <a href="files/AC_Circuits.pdf" download class="inline-flex items-center justify-center gap-2 text-sm font-medium bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 px-4 py-2 rounded-lg transition border border-amber-500/30 mt-4">
+            <span>📥 تنزيل الملف (PDF)</span>
+          </a>
+        </div>
+
+        <!-- AC Power Lecture -->
+        <div class="searchable-card bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-full border border-amber-500/20 mb-3 inline-block">PDF / AC Power</span>
+            <h3 class="text-lg font-bold text-white mb-2">محاضرات القدرة الكهربائية (AC Power)</h3>
+            <p class="text-slate-300 text-sm mb-2">د. زكي مجيد — القدرة الفعالة والتفاعلية، مثلث القدرة، ومعامل القدرة.</p>
+          </div>
+          <a href="files/AC_Power.pdf" download class="inline-flex items-center justify-center gap-2 text-sm font-medium bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 px-4 py-2 rounded-lg transition border border-amber-500/30 mt-4">
+            <span>📥 تنزيل الملف (PDF)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-6 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>مرجع هندسة الميكاترونكس — جميع البوابات والأدوات مكتملة ومحدثة</p>
+    </div>
+  </footer>
+
+  <!-- Search Filter Logic -->
+  <script>
+    function filterCards() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.searchable-card');
+      const hubSections = document.querySelectorAll('.hub-section');
+      let visibleCardsCount = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = "";
+          visibleCardsCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      hubSections.forEach(section => {
+        const sectionCards = section.querySelectorAll('.searchable-card');
+        const hasVisibleCards = Array.from(sectionCards).some(card => card.style.display !== "none");
+        
+        if (hasVisibleCards || query === "") {
+          section.style.display = "";
+        } else {
+          section.style.display = "none";
+        }
+      });
+
+      const noResultsMsg = document.getElementById('noResultsMessage');
+      if (visibleCardsCount === 0 && query !== "") {
+        noResultsMsg.classList.remove('hidden');
+      } else {
+        noResultsMsg.classList.add('hidden');
+      }
+    }
+  </script>
+
+</body>
+</html>
